@@ -1,5 +1,15 @@
 {
-    "HEADER": {
-      "TITLE": "Welcome to ShopZone"
+    "header": {
+      "title": "Welcome to ShopZone",
+      "logout": "Logout"
+    },
+    "login": {
+      "title": "Login",
+      "usernameLabel": "Username",
+      "passwordLabel": "Password",
+      "loginButton": "Login",
+      "requiredFieldError": "This field is required.",
+      "successMessage": "Login successful!",
+      "errorMessage": "Login failed. Please check your credentials."
     }
 }
