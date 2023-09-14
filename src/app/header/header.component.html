@@ -1,0 +1,8 @@
+<mat-toolbar color="primary">
+  <span>{{ 'HEADER.TITLE' | translate }}</span>
+  <span class="spacer"></span>
+  <mat-select [(ngModel)]="currentLanguage" (ngModelChange)="changeLanguage($event)" class="language-select">
+    <mat-option value="en">English</mat-option>
+    <mat-option value="ar">عربي</mat-option>
+  </mat-select>
+</mat-toolbar>
