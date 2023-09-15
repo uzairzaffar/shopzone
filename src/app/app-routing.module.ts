@@ -16,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: 'admin',
-    loadComponent: () => import('./admin/admin.component').then(m => m.AdminComponent),
+    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
     canActivate: [() => canActivate('admin')],
   },
   {

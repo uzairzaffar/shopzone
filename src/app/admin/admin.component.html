@@ -1,1 +1,38 @@
-<p>admin works!</p>
+<div>
+  <h2>{{ 'admin.label' | translate }}</h2>
+  <button mat-raised-button color="primary" (click)="openAddProductDialog()">
+    {{ 'admin.addProduct' | translate }}
+  </button>
+  
+  <mat-table [dataSource]="products">
+    <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef>{{ 'admin.id' | translate }}</mat-header-cell>
+    <mat-cell *matCellDef="let product">{{ product.id }}</mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="title">
+    <mat-header-cell *matHeaderCellDef>{{ 'admin.title' | translate }}</mat-header-cell>
+    <mat-cell *matCellDef="let product">{{ product.title }}</mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="price">
+    <mat-header-cell *matHeaderCellDef>{{ 'admin.price' | translate }}</mat-header-cell>
+    <mat-cell *matCellDef="let product">{{ product.price }}</mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef>{{ 'admin.actions' | translate }}</mat-header-cell>
+    <mat-cell *matCellDef="let product">
+      <button mat-button color="primary" (click)="openEditProductDialog(product)">
+      {{ 'admin.editProduct' | translate }}
+      </button>
+      <button mat-button color="warn" (click)="deleteProduct(product.id)">
+      {{ 'admin.deleteProduct' | translate }}
+      </button>
+    </mat-cell>
+    </ng-container>
+  
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+</div>
