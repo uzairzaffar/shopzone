@@ -1,0 +1,19 @@
+<h2>{{ data.product ? 'admin.editProduct'  : 'admin.addProduct' | translate }}</h2>
+<form [formGroup]="productForm">
+  <mat-form-field>
+    <input matInput placeholder="{{ 'admin.title' | translate }}" formControlName="title" required>
+    <mat-error *ngIf="productForm.get('title')?.hasError('required')">Title is required</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="{{ 'admin.description' | translate }}" formControlName="description">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="number" placeholder="{{ 'admin.price' | translate }}" formControlName="price" required>
+    <mat-error *ngIf="productForm.get('price')?.hasError('required')">Price is required</mat-error>
+    <mat-error *ngIf="productForm.get('price')?.hasError('min')">Price cannot be negative</mat-error>
+  </mat-form-field>
+</form>
+<div class="button-container">
+  <button mat-button color="warn" (click)="onSave()">{{ 'admin.delete.save' | translate }}</button>
+  <button mat-button (click)="onCancel()">{{ 'admin.delete.cancel' | translate }}</button>
+</div>

@@ -1,0 +1,12 @@
+<div class="dialog-content">
+<h2>{{ 'admin.delete.title' | translate }}</h2>
+<p>{{ 'admin.delete.confirmation' | translate }}</p>
+<div class="button-container">
+  <button mat-button color="warn" (click)="confirmDelete()">
+    {{ 'admin.delete.yes' | translate }}
+  </button>
+  <button mat-button (click)="cancelDelete()">
+    {{ 'admin.delete.cancel' | translate }}
+  </button>
+</div>
+</div>

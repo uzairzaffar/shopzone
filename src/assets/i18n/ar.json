@@ -26,5 +26,28 @@
       "next": "التالي",
       "categoriesFetchError": "خطأ في استرداد التصنيفات",
       "productsFetchError": "خطأ في استرداد المنتجات"
+    },
+    "admin": {
+      "label": "المشرف",
+      "addProduct": "إضافة منتج",
+      "editProduct": "تحرير المنتج",
+      "deleteProduct": "حذف المنتج",
+      "id": "الهوية",
+      "title": "الاسم",
+      "description": "وصف",
+      "price": "السعر",
+      "actions": "الإجراءات",
+      "delete": {
+        "title": "حذف المنتج",
+        "confirmation": "هل أنت متأكد أنك تريد حذف هذا المنتج؟",
+        "yes": "يمسح",
+        "cancel": "إلغاء",
+        "save": "يحفظ"
+      },
+      "productsFetchError": "خطأ في استرداد المنتجات",
+      "productDeleteError": "غير قادر على حذف المنتجات",
+      "productDeleted": "تم حذف المنتج بنجاح",
+      "productSaveError": "خطأ في حفظ المنتج",
+      "productSaved": "تم حفظ المنتج بنجاح"
     }
 }
