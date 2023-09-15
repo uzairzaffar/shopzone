@@ -36,6 +36,12 @@ export class LoginComponent {
 
   constructor() {}
 
+  ngOnInit() {
+    if(this.authService.getUserRole()) {
+      this.router.navigate([this.authService.getUserRole() === 'admin' ? '/admin' : '/user']);
+    }
+  }
+
   login() {
     if (!this.username || !this.password) {
       return;
