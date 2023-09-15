@@ -11,5 +11,20 @@
       "requiredFieldError": "This field is required.",
       "successMessage": "Login successful!",
       "errorMessage": "Login failed. Please check your credentials."
+    },
+    "user": {
+      "categories": "Categories",
+      "products": "Products",
+      "filters": "Filters",
+      "filterByCategory": "Filter by Category",
+      "minPrice": "Min Price",
+      "maxPrice": "Max Price",
+      "sortByPrice": "Sort by Price",
+      "sortAsc": "Ascending",
+      "sortDesc": "Descending",
+      "previous": "Previous",
+      "next": "Next",
+      "categoriesFetchError": "Error fetching categories",
+      "productsFetchError": "Error fetching products"
     }
 }
