@@ -1,1 +1,52 @@
-<p>user works!</p>
+<div class="user-view">
+  <div class="categories">
+    <h2>{{ 'user.categories' | translate }}</h2>
+    <ul>
+      <li *ngFor="let category of categories" [@fadeInOut]>
+        <a (click)="loadProductsByCategory(category)">{{ category }}</a>
+      </li>
+    </ul>
+  
+  <div class="filter-sort">
+    <h2>{{ 'user.filters' | translate }}</h2>
+    <mat-form-field>
+      <input matInput type="number" placeholder="{{ 'user.minPrice' | translate }}" [(ngModel)]="minPriceFilter" (ngModelChange)="onFilterChange()" class="no-border-input"/>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="number" placeholder="{{ 'user.maxPrice' | translate }}" [(ngModel)]="maxPriceFilter" (ngModelChange)="onFilterChange()" class="no-border-input"/>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>{{ 'user.sortByPrice' | translate }}</mat-label>
+      <mat-select [(ngModel)]="selectedSortOption" (ngModelChange)="onFilterChange()">
+        <mat-option value="asc">{{ 'user.sortAsc' | translate }}</mat-option>
+        <mat-option value="desc">{{ 'user.sortDesc' | translate }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  </div>
+
+  <div class="products" *ngIf="selectedCategory">
+    <h2>{{ 'user.products' | translate }}</h2>
+    <mat-progress-spinner *ngIf="isLoading; else productContent" mode="indeterminate" diameter="40"></mat-progress-spinner>
+    <ng-template #productContent>
+      <div class="product-card-container">
+        <mat-card class="product-card" *ngFor="let product of displayedProducts" [@fadeInOut]>
+          <img mat-card-image [src]="product.image" alt="{{ product.title }}" />
+          <mat-card-title>{{ product.title }}</mat-card-title>
+          <mat-card-content>
+            <p>Price: {{ product.price | currency }}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </ng-template>
+
+    <div class="pagination">
+      <button (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1" *ngIf="selectedCategory && displayedProducts.length > 0">
+        {{ 'user.previous' | translate }}
+      </button>
+      <button (click)="onPageChange(currentPage + 1)" [disabled]="currentPage === totalPages" *ngIf="selectedCategory && displayedProducts.length > 0">
+        {{ 'user.next' | translate }}
+      </button>
+    </div>
+  </div>
+</div>

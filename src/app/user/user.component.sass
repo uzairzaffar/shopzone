@@ -1,0 +1,156 @@
+.user-view
+  display: flex
+  flex-wrap: wrap
+  padding: 16px
+
+  @media (max-width: 768px)
+    flex-direction: column
+
+  .categories
+    flex: 1
+    padding: 16px
+    max-width: 15%
+    border-right: 1px solid #ccc
+
+    .filter-sort
+    flex: 1
+    padding: 16px
+    max-width: 15%
+    border-right: 1px solid #ccc
+
+    @media (max-width: 768px)
+      max-width: 100%
+      border-right: none
+      margin-bottom: 16px
+    
+
+    h2
+      font-size: 24px
+      margin-bottom: 16px
+    
+
+    mat-form-field
+      width: 100%
+      margin-bottom: 16px
+    
+
+    input
+      width: 100%
+      padding: 8px
+      border: 1px solid #ccc
+      border-radius: 4px
+      font-size: 16px
+
+    @media (max-width: 768px)
+      max-width: 100%
+      border-right: none
+      margin-bottom: 16px
+
+    h2
+      font-size: 24px
+      margin-bottom: 16px
+    
+    ul
+      list-style: none
+      padding: 0
+
+      li
+        margin: 8px 0
+
+        a
+          cursor: pointer
+          text-decoration: none
+          color: #007bff
+
+          &:hover
+            text-decoration: underline
+
+  .products
+    flex: 2
+    padding: 16px
+
+    h2
+      font-size: 24px
+      margin-bottom: 16px
+
+    mat-progress-spinner
+      margin: 16px 0
+    
+    .product-card-container
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+
+      @media (max-width: 768px)
+        flex-direction: column
+        align-items: center
+      
+      .product-card
+        width: calc(30% - 16px)
+        margin-bottom: 16px
+
+        @media (max-width: 768px)
+          width: 100%
+        
+        mat-card
+          display: flex
+          flex-direction: column
+          align-items: center
+
+          mat-card-image
+            max-width: 100%
+            max-height: 200px
+          
+          mat-card-title
+            font-size: 20px
+            margin: 8px 0
+
+          mat-card-content
+            font-size: 16px
+            margin: 8px 0
+
+    .product-card
+      display: flex
+      flex-direction: column
+      align-items: center
+      padding: 16px
+      border: 1px solid #ccc
+      margin: 16px
+      text-align: center
+
+      img
+        max-width: 100%
+        max-height: 200px
+
+      h3
+        font-size: 20px
+        margin: 8px 0
+
+      p
+        font-size: 16px
+        margin: 8px 0
+      
+  .pagination
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-top: 20px
+
+    button
+      margin: 0 5px
+      padding: 5px 10px
+      border: 1px solid #007bff
+      border-radius: 4px
+      background-color: #007bff
+      color: #fff
+      cursor: pointer
+      transition: background-color 0.3s
+
+      &:hover
+        background-color: #0056b3
+
+      &:disabled
+        opacity: 0.5
+        cursor: not-allowed
+        background-color: #ccc
+        border-color: #ccc

@@ -11,5 +11,20 @@
       "requiredFieldError": "هذا الحقل مطلوب.",
       "successMessage": "تم تسجيل الدخول بنجاح!",
       "errorMessage": "فشل تسجيل الدخول. يرجى التحقق من بيانات الاعتماد الخاصة بك." 
+    },
+    "user": {
+      "categories": "التصنيفات",
+      "products": "المنتجات",
+      "filters": "الفلاتر",
+      "filterByCategory": "تصفية حسب الفئة",
+      "minPrice": "السعر الأدنى",
+      "maxPrice": "السعر الأقصى",
+      "sortByPrice": "ترتيب حسب السعر",
+      "sortAsc": "تصاعدي",
+      "sortDesc": "تنازلي",
+      "previous": "السابق",
+      "next": "التالي",
+      "categoriesFetchError": "خطأ في استرداد التصنيفات",
+      "productsFetchError": "خطأ في استرداد المنتجات"
     }
 }
