@@ -11,17 +11,17 @@ import { AuthService } from './service/auth.service';
 export class AppComponent {
   title = 'shopzone';
 
-  currentLanguage: string;
+  currentLanguage: string = '';
 
   private readonly destroy: DestroyRef = inject(DestroyRef);
   private translate = inject(TranslateService);
   private authService = inject(AuthService);
   
   constructor() {
-    this.currentLanguage = this.authService.getUserLanguage();
   }
 
   ngOnInit() {
+    this.currentLanguage = this.authService.getUserLanguage();
     this.translate.onLangChange.pipe(takeUntilDestroyed(this.destroy)).subscribe((event) => {
       this.currentLanguage = event.lang
     });

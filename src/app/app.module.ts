@@ -7,6 +7,8 @@ import { FormsModule } from '@angular/forms';
 import { MatToolbarModule } from  '@angular/material/toolbar';
 import { MatIconModule } from  '@angular/material/icon';
 import { MatSelectModule } from  '@angular/material/select';
+import { MatButtonModule } from  '@angular/material/button';
+import { MatSnackBarModule } from  '@angular/material/snack-bar';
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -39,7 +41,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     FormsModule,
     MatToolbarModule,
     MatIconModule,
-    MatSelectModule
+    MatSnackBarModule,
+    MatSelectModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
